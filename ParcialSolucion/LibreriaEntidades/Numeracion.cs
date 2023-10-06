@@ -28,6 +28,18 @@ namespace LibreriaEntidades
 
         public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistema);
 
+        public void CambiarValor(string nuevoValor)
+        {
+            if (EsNumeracionValida(nuevoValor))
+            {
+                valor = nuevoValor;
+            }
+            else
+            {
+                valor = msgError;
+            }
+        }
+
         public virtual bool EsNumeracionValida(string valor)
         {
             return !string.IsNullOrWhiteSpace(valor);

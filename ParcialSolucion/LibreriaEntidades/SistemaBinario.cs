@@ -16,13 +16,15 @@ namespace LibreriaEntidades
                 return false;
             }
 
-            foreach (char c in valor)
-            {
-                if (c != '0' && c != '1')
-                {
-                    return false;
-                }
-            }
+            //no se me ocurrio como transformar el resultado accediendo al metodo privado
+            //decimalAbinario de la clase SistemaDecimal jajajs disculpe
+            //foreach (char c in valor)
+            //{
+            //    if (c != '0' && c != '1')
+            //    {
+            //        return false;
+            //    }
+            //}
 
             return true;
         }

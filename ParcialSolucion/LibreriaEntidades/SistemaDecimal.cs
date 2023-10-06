@@ -75,7 +75,7 @@ namespace LibreriaEntidades
             return this;
         }
 
-        private string DecimalABinario(double valor)
+        public string DecimalABinario(double valor)
         {
             if (valor < 0)
             {

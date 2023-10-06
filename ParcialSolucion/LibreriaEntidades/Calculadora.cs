@@ -9,7 +9,8 @@ namespace LibreriaEntidades
         private List<string> operaciones;
         private Numeracion primerOperando;
         private Numeracion segundoOperando;
-        private Numeracion resultado;
+        public Numeracion resultado { get; set; }
+        //private Numeracion resultado;
         private ESistema sistema;
 
         public string NombreAlumno
@@ -52,7 +53,8 @@ namespace LibreriaEntidades
         {
             operaciones = new List<string>();
             nombreAlumno = "";
-            sistema = ESistema.Decimal; 
+            sistema = ESistema.Decimal;
+            resultado = new SistemaDecimal("0");
         }
 
 
@@ -110,10 +112,14 @@ namespace LibreriaEntidades
             switch (sistema)
             {
                 case ESistema.Decimal:
+
                     return new SistemaDecimal(valorResultado.ToString());
+                    
                 case ESistema.Binario:
+
                     return new SistemaBinario(valorResultado.ToString());
                 
+                //esta excepcion es un poco innecesaria porque viene por defecto en decimal pero bueno
                 default:
                 throw new ArgumentException("Sistema de numeración no válido.");
             }
